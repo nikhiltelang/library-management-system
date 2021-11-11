@@ -79,5 +79,3 @@ def update_book(request,myid):
 
 def update_request(request,myid):
     books = models.Book.objects.filter(id=myid)
-    
-    pass
