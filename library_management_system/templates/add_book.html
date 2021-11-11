@@ -3,8 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Book</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
 </head>
 <body>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'home' %} aria-current="page">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'add_book' %}">Add New Book</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link ">Update Book</a>
+      </li>
+    </ul>
+    <div class="container">
+    <form method="POST" action="{% url 'insert_book' %}"> {% csrf_token %}
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Book Name</i></label>
+            <input type="text" class="form-control mt-2" name="name" placeholder="Enter name of the Book" required>
+        </div>
+    </div>
 
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Author Name</i></label>
+            <input type="text" class="form-control mt-2" name="author" placeholder="Enter name of the Author" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">ISBN Number</i></label>
+            <input type="number" class="form-control mt-2" name="isbn" placeholder="Enter ISBN number of the book" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Category</i></label>
+            <input type="text" class="form-control mt-2" name="category" placeholder="Enter Category of the book" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary mt-4">Add Book</button>
+</div>
+</form>
 </body>
 </html>

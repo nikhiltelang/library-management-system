@@ -24,15 +24,17 @@
   <div class="row justify-content-center my-5">
     <div class="col-4 border" style="background-color: white;color: black;padding: 50px;">
       <h1 class="ustify-content-center">Register</h1>
-      <form action="#" method="post">{% csrf_token %}
+      <form action="{% url 'insert_admin' %}" method="post">{% csrf_token %}
       <div class="row my-2">
         <div class="col">
+          <label for="SignupInputFirstName">Firstname</label>
+          <input type="text" class="form-control" id="SignupInputFirstName" name="SignupInputFirstName">
         </div>
       </div>
       <div class="row my-2">
         <div class="col">
-          <label for="SignupInputFullName">Fullname</label>
-          <input type="text" class="form-control" id="SignupInputFullName" name="SignupInputFullName">
+          <label for="SignupInputFirstName">Lastname</label>
+          <input type="text" class="form-control" id="SignupInputLastName" name="SignupInputLastName">
         </div>
       </div>
       <div class="row my-2">
