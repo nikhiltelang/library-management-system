@@ -11,17 +11,40 @@
     crossorigin="anonymous"></script>
 </head>
 <body>
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link " href="{% url 'home' %} aria-current="page">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="{% url 'add_book' %}">Add New Book</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link ">Update Book</a>
-      </li>
-    </ul>
+    {% if user.is_authenticated %}
+<ul class="nav justify-content-end nav-light bg-light" style="height: 50px;">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'add_book' %}">Add Book</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Update Book</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{ user.username }}</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Change Password</a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="{% url 'signout' %}">Log Out</a></li>
+      </ul>
+    </li>
+  </ul>
+{% else %}
+<ul class="nav justify-content-end nav-light bg-light" style="height: 50px;">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="/admin">Admin Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'signinpage' %}">Login</a>
+    </li>
+  </ul>
+{% endif %}
     <div class="container">
     <form method="POST" action="{% url 'insert_book' %}"> {% csrf_token %}
     <div class="row mt-4">
