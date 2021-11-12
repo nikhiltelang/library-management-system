@@ -12,6 +12,40 @@
 </head>
 <body>
     {% if user.is_authenticated %}
+
+
+<!-- Modal -->
+<div class="modal " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content">
+      <form action="{%url 'changepassword' user.id %}" method="post">{% csrf_token %}
+      <div class="modal-header">
+        <h5 class="modal-title text-dark" id="staticBackdropLabel">Password Change</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+        <div class="modal-body">
+        <div class="mb-3">
+          <label for="inputpassword1" class="form-label text-dark">Password</label>
+          <input type="password" class="form-control" id="inputpassword1" name="inputpassword1">
+        </div>
+        <div class="mb-3">
+          <label for="inputpassword2" class="form-label text-dark">Confirm Password</label>
+          <input type="password" class="form-control" id="inputpassword2" name="inputpassword2">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-primary">Change Password</button>
+      </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+
 <ul class="nav justify-content-end nav-light bg-light" style="height: 50px;">
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
@@ -19,14 +53,10 @@
     <li class="nav-item">
       <a class="nav-link" href="{% url 'add_book' %}">Add Book</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Update Book</a>
-    </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{ user.username }}</a>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Change Password</a>
+        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change Password</a>
         </li>
         <li>
           <hr class="dropdown-divider">
@@ -46,8 +76,10 @@
   </ul>
 {% endif %}
 <div class="container">
-    <form method="POST" action="{% url 'insert_book' %}"> {% csrf_token %}
-        {% for book in books %}
+    {% for book in books %}
+    <form method="POST" action="{% url 'update_request' book.id %}"> {% csrf_token %}
+
+        <input type="hidden" name="id" value="book.id" id="id">
     <div class="row mt-4">
         <div class="form-group col-md-12">
             <label><i style="font-weight: bold;">Book Name</i></label>

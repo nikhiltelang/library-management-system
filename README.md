@@ -40,6 +40,14 @@ management as most of the manual work done is reduced
 - Cross platform
 
 
+## Database Connection
+
+Configure Your Mysql Database in Setting.py
+- Name : 
+- Host : 
+- Port :
+- User :
+- Password :
 ## Run Locally
 
 Clone the project

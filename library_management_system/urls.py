@@ -14,4 +14,6 @@ urlpatterns = [
     path("signinpage/", views.signinpage, name="signinpage"),
     path("login_request/", views.login_request, name="login_request"),
     path("update_book/<int:myid>/", views.update_book, name="update_book"),
+    path("update_request/<int:myid>/", views.update_request, name="update_request"),
+    path("changepassword/<int:id>", views.changepassword, name="changepassword"),
 ]
