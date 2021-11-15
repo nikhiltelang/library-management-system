@@ -1,1 +1,132 @@
-2021-11-12 07:02:54,597 | root | INFO | None  Jump to the home page
+2021-11-15 09:11:28,573 | root | INFO | None  Jump to the home page
+2021-11-15 09:11:29,114 | django.request | WARNING | Not Found: /favicon.ico
+2021-11-15 09:11:32,635 | root | INFO | None  jump to the Sign in Page
+2021-11-15 09:11:35,052 | root | INFO | nikhiltelang34@gmail.com  Login Sucessfully
+2021-11-15 09:11:40,410 | root | INFO | None  Jump to the home page
+2021-11-15 09:12:53,861 | root | INFO | None  Logout Successfully
+2021-11-15 09:12:53,877 | root | INFO | None  Jump to the home page
+2021-11-15 09:12:55,126 | root | INFO | None  Jump to the Registration Page
+2021-11-15 09:12:57,179 | root | INFO | None  Jump to the Registration Page
+2021-11-15 09:13:01,267 | root | INFO | None  Jump to the Registration Page
+2021-11-15 09:13:05,984 | root | INFO | None  jump to the Sign in Page
+2021-11-15 09:13:09,088 | root | INFO | None  Jump to the Registration Page
+2021-11-15 09:13:58,654 | root | INFO | None  Jump to the Registration Page
+2021-11-15 09:13:59,417 | root | INFO | None  Jump to the Registration Page
+2021-11-15 09:13:59,709 | root | INFO | None  Jump to the Registration Page
+2021-11-15 09:14:33,697 | root | INFO | None  Jump to the Registration Page
+2021-11-15 09:15:08,706 | root | INFO | None  Jump to the home page
+2021-11-15 09:15:11,229 | root | INFO | None  jump to the Sign in Page
+2021-11-15 09:15:13,120 | root | INFO | nikhiltelang34@gmail.com  Login Sucessfully
+2021-11-15 09:15:17,877 | root | INFO | None  Logout Successfully
+2021-11-15 09:15:17,885 | root | INFO | None  Jump to the home page
+2021-11-15 09:15:20,060 | root | INFO | None  jump to the Sign in Page
+2021-11-15 09:15:22,118 | root | INFO | nikhiltelang34@gmail.com  Login Sucessfully
+2021-11-15 09:15:27,565 | root | INFO | None  Jump to the home page
+2021-11-15 09:15:31,180 | root | INFO | None  Jump to the add bok page
+2021-11-15 09:16:51,070 | root | INFO | None  Jump to the add bok page
+2021-11-15 09:16:53,059 | root | INFO | None  Jump to the add bok page
+2021-11-15 09:16:56,537 | root | INFO | None  Jump to the add bok page
+2021-11-15 09:16:58,240 | root | INFO | None  Jump to the add bok page
+2021-11-15 09:17:02,578 | root | INFO | None  Jump to the add bok page
+2021-11-15 09:19:49,748 | root | INFO | None  Jump to the add bok page
+2021-11-15 09:19:49,932 | django.request | ERROR | Internal Server Error: /add_book/
+Traceback (most recent call last):
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'extendts'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nick/Library_Management_System/LMS/library_management_system/views.py", line 25, in add_book
+    return render(request, "add_book.html")
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/base.py", line 534, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 1: 'extendts'. Did you forget to register or load this tag?
+2021-11-15 09:20:00,786 | root | INFO | None  Jump to the add bok page
+2021-11-15 09:21:55,270 | root | INFO | None  Jump to the add bok page
+2021-11-15 09:21:58,845 | root | INFO | None  Jump to the Update Book Page
+2021-11-15 09:22:07,603 | root | INFO | None  Jump to the Update Book Page
+2021-11-15 09:23:48,691 | root | INFO | None  Jump to the home page
+2021-11-15 09:23:52,044 | root | INFO | None  Jump to the home page
+2021-11-15 09:24:23,108 | root | INFO | None  Jump to the home page
+2021-11-15 09:24:59,049 | root | INFO | None  Jump to the home page
+2021-11-15 09:24:59,159 | django.request | ERROR | Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'blockbody'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nick/Library_Management_System/LMS/library_management_system/views.py", line 15, in home
+    return render(request, "index.html", {'books': books})
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/loader_tags.py", line 278, in do_extends
+    nodelist = parser.parse()
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/nick/anaconda3/envs/Library_Management_System/lib/python3.7/site-packages/django/template/base.py", line 534, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 2: 'blockbody'. Did you forget to register or load this tag?
+2021-11-15 09:25:25,638 | root | INFO | None  Jump to the home page
+2021-11-15 09:25:30,030 | root | INFO | None  Jump to the add bok page
+2021-11-15 09:25:31,680 | root | INFO | None  Jump to the home page
+2021-11-15 09:25:49,080 | root | INFO | None  Logout Successfully
+2021-11-15 09:25:49,096 | root | INFO | None  Jump to the home page
+2021-11-15 09:25:50,504 | root | INFO | None  Jump to the Registration Page
+2021-11-15 09:25:56,494 | root | INFO | None  jump to the Sign in Page
+2021-11-15 09:27:25,189 | root | INFO | None  jump to the Sign in Page
+2021-11-15 09:27:38,004 | root | INFO | None  jump to the Sign in Page
+2021-11-15 09:27:47,025 | root | INFO | None  jump to the Sign in Page
+2021-11-15 09:27:49,769 | root | INFO | nikhiltelang34@gmail.com  Login Sucessfully
